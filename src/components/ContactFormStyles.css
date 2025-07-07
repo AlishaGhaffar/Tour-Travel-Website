@@ -30,6 +30,25 @@
     display: inline;
 }
 
+.form-container button {
+    background-color: rgb(230, 224, 224);
+    color: #2a2a2a;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: black;
+    color: #fff;
+}
+
+
 @media screen and (max-width: 850px) {
     .form-container {
         margin: 4rem 2rem;

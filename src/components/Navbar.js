@@ -1,13 +1,15 @@
 import { Component } from "react";
 import "./NavbarStyles.css";
 import { MenuItems } from "./MenuItems";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
-    state = {clicked: false};
+    state = { clicked: false };
+
     handleClick = () => {
-        this.setState({clicked: !this.state.clicked})
-    }
+        this.setState({ clicked: !this.state.clicked });
+    };
+
     render() {
         return (
             <nav className="NavbarItems">
@@ -18,22 +20,22 @@ class Navbar extends Component {
                 </div>
 
                 <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
-                    {MenuItems.map((item, index) => {
-                        return (
-                            <li key={index}>
-                                <Link className={item.cName} to={item.url}>
-                                    <i className={item.icon}></i>{item.title}
-                                </Link>
-                            </li>
-                        )
-                    })}
-                    <button>Sign Up</button>
-
+                    {MenuItems.map((item, index) => (
+                        <li key={index}>
+                            <Link className={item.cName} to={item.url}>
+                                <i className={item.icon}></i> {item.title}
+                            </Link>
+                        </li>
+                    ))}
+                    <li>
+                        <Link className="signup-btn" to="/signup">
+                            Sign Up
+                        </Link>
+                    </li>
                 </ul>
             </nav>
-        )
+        );
     }
 }
-
 
 export default Navbar;
